@@ -5,7 +5,6 @@ import (
 	"main/model"
 	"net/http"
 	"strings"
-	"time"
 
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gin-gonic/gin"
@@ -19,7 +18,8 @@ func JwtSign(payload model.Employee) string {
 	atClaims["id"] = payload.UID
 	atClaims["username"] = payload.Username
 	//atClaims["level"] = payload.Level
-	atClaims["exp"] = time.Now().Add(time.Minute * 15).Unix()
+	//atClaims["exp"] = time.Now().Add(time.Minute * 15).Unix()
+	atClaims["exp"]=1570238992
 	//payload end
 
 	at := jwt.NewWithClaims(jwt.SigningMethodHS256, atClaims)

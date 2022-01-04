@@ -2,7 +2,6 @@ package api
 
 import (
 	"main/db"
-	"main/interceptor"
 	"main/model"
 
 	"github.com/gin-gonic/gin"
@@ -13,7 +12,8 @@ func setupUserAPI(router *gin.Engine) {
 	{
 
 		authenAPI.POST("/edituser", edituser)
-		authenAPI.POST("/getuser", interceptor.JwtVerify, getuser)
+		//authenAPI.POST("/getuser", interceptor.JwtVerify, getuser)
+		authenAPI.POST("/getuser", getuser)
 	}
 }
 

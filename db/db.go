@@ -15,7 +15,7 @@ func GetDB() *gorm.DB{
 
 func SetupDB(){
 
-	dsn := "yeaw:481725209@tcp(202.80.228.46:3306)/airoffice?charset=utf8mb4&parseTime=True&loc=Local"
+	dsn := "yeaw:481725209@tcp(202.80.228.46:3306)/hos?charset=utf8mb4&parseTime=True&loc=Local"
 	database,err := gorm.Open(mysql.Open(dsn), &gorm.Config{
 		NamingStrategy: schema.NamingStrategy{
 			SingularTable: true, //nochang table name

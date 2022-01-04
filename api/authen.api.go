@@ -31,8 +31,8 @@ func login(c *gin.Context) {
 	var employee model.Employee
 	if c.ShouldBind(&employee) == nil {
 		var queryUser model.Employee
-		if err := db.GetDB().First(&queryUser, "username=?",employee.Username).Error; err != nil {
-			c.JSON(200, gin.H{"result": "nok2", "error": err})
+		if err := db.GetDB().First(&queryUser, "username=?", employee.Username).Error; err != nil {
+			c.JSON(200, gin.H{"result": "nok3", "error": err})
 		} else if CheckPasswordHash(employee.Passwordjwt, queryUser.Passwordjwt) == false {
 			c.JSON(200, gin.H{"result": "nok", "error": "invalid password"})
 		} else {

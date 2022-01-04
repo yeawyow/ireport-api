@@ -11,4 +11,5 @@ func Setup(router *gin.Engine) {
 	db.SetupDB()
 	setupAuthenAPI(router)
 	setupUserAPI(router)
+	setupPatientAPI(router)
 }
